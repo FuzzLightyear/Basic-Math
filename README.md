@@ -1,7 +1,6 @@
 # Basic-Math
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/FuzzLightyear/Basic-Math/main)
-.. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/FuzzLightyear/Basic-Math/main
+
 Illustrating integers in binary, binary addition, and showing how multiplication is related to addition, as well as exponentiation to multiplication
 
 #To Install:
