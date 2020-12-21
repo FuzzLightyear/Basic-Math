@@ -17,7 +17,7 @@ Illustrating integers in binary, binary addition, and showing how multiplication
     "source venv/bin/activate"
     
 5). Install dependencies by typing:
-    "pip install matplotlib numpy"
+    "pip install jupyter matplotlib numpy"
     
 6). If step 5 doesn't work, install python via their website, your operating system's app store, or if on Debian Linux or Ubuntu, type:
     "sudo apt install python3 python3-pip"
