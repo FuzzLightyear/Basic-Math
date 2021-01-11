@@ -1,3 +1,6 @@
+#Author FuzzLightyer aka Fuzzifier aka Medusa
+#File to store some of the functions defined elsewhere
+
 def getPhi(): #input(None), calculates phi. Returns phi
     n = 20
     print(n)
