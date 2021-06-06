@@ -52,59 +52,56 @@ def binaryToInt(_binNum):
     return tmpsum
 
 def binaryAdd(x, y): #takes lists ([0,0,1,0],[1,0,1])
-    length = 0
-    tmp = []
-    if len(x) >= len(y):
-        g = x
-        s = y
-    else:
-        g = y
-        s = x
-    length = len(g)
-    for i in range(len(g)-len(s)):
-        s.insert(0, 0)
-    
+    rx = revArray(x)
+    ry = revArray(y)
+    if len(x) != len(ry):
+        if min(len(x),len(y)) == len(x):
+            s = rx
+        else:
+            s = ry
+    while len(rx) != len(ry):
+        s.append(0)
+
     carry = 0
-    for j in range(length):
-        if carry == 0:
-            if x[len(x)-j-1] == 0:
-                if y[len(y)-j-1] == 0:
-                    carry = 0
-                    tmp.insert(j, 0)
-                else: #y[len(y)-j] == 1
-                    carry = 0
-                    tmp.insert(j, 1)
-            else: #x 1
-                if y[len(y)-j-1] == 0:
-                    carry = 0
-                    tmp.insert(j, 1)
-                else: #y 1 x 1 c 0
-                    carry = 1
-                    tmp.insert(j, 0)
-        else: #c 1
-            if x[len(x)-j-1] == 0:
-                if y[len(y)-j-1] == 0: #c1 x0 y0
-                    carry = 0
-                    tmp.insert(j, 1)
-                else: # c1 x0 y1
-                    carry = 1
-                    tmp.insert(j, 0)
-            else:
-                if y[len(y)-j-1] == 0: #c1 x1 y0
-                    carry = 1
-                    tmp.insert(j, 0)
-                else: #c1 x1 y1
-                    carry = 1
-                    tmp.insert(j, 1)
+    sum = []
+    for i in range(len(rx)):
+        if rx[i] and ry[i] and carry:
+            sum.append(1)
+            carry =1
+        elif (rx[i] and ry[i] and not carry) or (rx[i] and carry and not ry[i]) or (ry[i] and carry and not rx[i]):
+            sum.append(0)
+            carry = 1
+        elif (rx[i] and not carry and not ry[i]) or (carry and not rx[i] and not ry[i]) or (ry[i] and not carry and not rx[i]):
+            sum.append(1)
+            carry = 0
+        else: #all 0s
+            sum.append(0)
+            carry=0
+    if carry:
+        sum.append(1)
+    return(revArray(sum))
 
-    if carry == 1:
-        tmp.insert(0, 1)
+l = []
+o = []
+l.append(int(1))
+l.append(int(1))
+l.append(int(1))
+print(l)
+print(binaryToInt(l))
+print("+")
+    
+o.append(int(1))
+o.append(int(1))
+o.append(int(1))
+o.append(int(1))
+print(o)
+print(binaryToInt(o))
 
-    print(x)
-    print(" + ")
-    print(y)
-    print("=")
-    return tmp
+
+h = binaryAdd(l,o)
+print(h)
+print("=")
+print(binaryToInt(h))
 
 
 def mult(x, y):
@@ -131,7 +128,7 @@ def binMult(x, y):
 x = []
 y = []
 x.append(int(1))
-x.append(int(0)) #x=2
+x.append(int(1)) #x=3
 
 y.append(int(1)) #y = 5
 y.append(int(0))
