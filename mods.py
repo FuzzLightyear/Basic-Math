@@ -104,33 +104,33 @@ print("=")
 print(binaryToInt(h))
 
 
-def mult(x, y):
-    rval = int(0)
-    for i in range(y):
-        tmpsum = binaryAdd(numToBinary(x), numToBinary(rval))
-        print(tmpsum)
-        rval += binaryToInt(tmpsum)
-        print(binaryToInt(int(rval)))
-    return int(rval)
-
 def binMult(x, y):
     rsum = 0
-    
     print(binaryToInt(y))
     for i in range(binaryToInt(y)):
         print("rsum:")
         print(rsum)
         tmp = binaryAdd(numToBinary(rsum), x)
-        rsum = binaryToInt(tmp)
-        
-    return rsum
+        rsum = binaryToInt(tmp) 
+    return tmp #return rsum to return int
 
-x = []
-y = []
-x.append(int(1))
-x.append(int(1)) #x=3
+def mult(x, y):
+    binProduct = binMult(numToBinary(x), numToBinary(y))
+    return(binaryToInt(binProduct))
 
-y.append(int(1)) #y = 7
-y.append(int(1))
-y.append(int(1))
-print(binMult(x,y))
+def add(x, y):
+    binSum = binaryAdd(numToBinary(x), numToBinary(y))
+    return(binaryToInt(binSum))
+
+# x = []
+# y = []
+# x.append(int(1))
+# x.append(int(1)) #x=3
+
+# y.append(int(1)) #y = 7
+# y.append(int(1))
+# y.append(int(1))
+# print(binMult(x,y))
+
+print(mult(5, 7))
+print(add(3,10))
