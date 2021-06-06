@@ -130,7 +130,7 @@ y = []
 x.append(int(1))
 x.append(int(1)) #x=3
 
-y.append(int(1)) #y = 5
-y.append(int(0))
+y.append(int(1)) #y = 7
+y.append(int(1))
 y.append(int(1))
 print(binMult(x,y))
