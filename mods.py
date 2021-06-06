@@ -41,7 +41,7 @@ def numToBinary(x):
         else:
             binNum.append(int(0))
     return binNum
-print(numToBinary(15))
+
 
 
 def binaryToInt(_binNum):
@@ -111,8 +111,29 @@ def mult(x, y):
     rval = int(0)
     for i in range(y):
         tmpsum = binaryAdd(numToBinary(x), numToBinary(rval))
+        print(tmpsum)
         rval += binaryToInt(tmpsum)
         print(binaryToInt(int(rval)))
     return int(rval)
 
-print(binaryToInt([1,1,0]))
+def binMult(x, y):
+    rsum = 0
+    
+    print(binaryToInt(y))
+    for i in range(binaryToInt(y)):
+        print("rsum:")
+        print(rsum)
+        tmp = binaryAdd(numToBinary(rsum), x)
+        rsum = binaryToInt(tmp)
+        
+    return rsum
+
+x = []
+y = []
+x.append(int(1))
+x.append(int(0)) #x=2
+
+y.append(int(1)) #y = 5
+y.append(int(0))
+y.append(int(1))
+print(binMult(x,y))
