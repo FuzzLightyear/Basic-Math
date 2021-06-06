@@ -116,4 +116,3 @@ def mult(x, y):
     return int(rval)
 
 print(binaryToInt([1,1,0]))
-#hi
