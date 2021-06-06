@@ -52,6 +52,7 @@ def binaryToInt(_binNum):
     return tmpsum
 
 def binaryAdd(x, y): #takes lists ([0,0,1,0],[1,0,1])
+    print("Adding Binary Numbers: ", x , " (", binaryToInt(x), ")    and    ", y, " (", binaryToInt(y), ")")
     rx = revArray(x)
     ry = revArray(y)
     if len(x) != len(ry):
@@ -86,14 +87,20 @@ o = []
 l.append(int(1))
 l.append(int(1))
 l.append(int(1))
+
+o.append(int(1))
+o.append(int(1))
+o.append(int(1))
+o.append(int(1))
+
+print("Proceeding with binary number addition of X and Y to get sum Z")
+print("X, as seen directly below in binary and numerical form")
 print(l)
 print(binaryToInt(l))
 print("+")
-    
-o.append(int(1))
-o.append(int(1))
-o.append(int(1))
-o.append(int(1))
+
+print("Y, as seen directly below in binary and numerical form")
+
 print(o)
 print(binaryToInt(o))
 
@@ -101,6 +108,7 @@ print(binaryToInt(o))
 h = binaryAdd(l,o)
 print(h)
 print("=")
+print("Z, as seen directly below in binary and numerical form")
 print(binaryToInt(h))
 
 
@@ -108,17 +116,21 @@ def binMult(x, y):
     rsum = 0
     print(binaryToInt(y))
     for i in range(binaryToInt(y)):
-        print("rsum:")
-        print(rsum)
         tmp = binaryAdd(numToBinary(rsum), x)
         rsum = binaryToInt(tmp) 
     return tmp #return rsum to return int
 
 def mult(x, y):
+    #Proceeding with multiplication.
+    #Converted x and y to binary forms. 
+    #Transitioning to binary multiplication operation.
     binProduct = binMult(numToBinary(x), numToBinary(y))
     return(binaryToInt(binProduct))
 
 def add(x, y):
+    #Proceeding with addition.
+    #Converted x and y to binary forms. 
+    #Transitioning to binary addition operation.
     binSum = binaryAdd(numToBinary(x), numToBinary(y))
     return(binaryToInt(binSum))
 
